@@ -10,23 +10,26 @@
     <script>
 
 // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
-// 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
-// 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
-// 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
-
-    function miFuncion(contar){
-
-        console.log(contar.length)
 
 
-    }
 
-function recortarLetras(recortar){
 
-console.log(recortar.substr(0,4))
+ const  miFuncion = (contar ="") => (!contar) ? console.warn(" No es un string valido") :  console.log(contar.length);
+ miFuncion("hola Mundo");
 
+
+
+    // 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+function recortarLetras(recortar = "",recorte =undefined ){
+if(!recortar){
+
+    console.warn(" No es un string valido")
+}else {
+console.log(recortar.slice(0,recorte))
+    }   
 }
-    
+ 
+// 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
 function convertirArray (convertidor){
 
     let arr = Array.from(convertidor);
@@ -37,23 +40,33 @@ function convertirArray (convertidor){
 
 }
 
-    function repetir(frase,rep){
-    
-    for (let i =0; i < rep; i++){
+
+// 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+
+    function repetir(frase="",rep=undefined){
+    if (!frase)
+    {
+        console.warn("no hay es una candena valida")
+
+        
+    }else { 
+        for (let i =0; i < rep; i++){
 
             console.log(`${frase}`)
         }
-        
+        }
+   
      
     }
 
 
 
-    miFuncion("hola Mundo");
+    
     recortarLetras("Hola mundo");
     convertirArray("Hola Jon MirCha");
     repetir("hola como estas?",3);
-
+    repetir();
+    recortarLetras("Oslan Villalobos",5);
 
     </script>
     
